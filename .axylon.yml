@@ -3,7 +3,7 @@ name: axylon
 
 steps:
 - name: compile
-  image: rzlamrr/dvst-builder:latest
+  image: fr3akyphantom/droid-builder:focal
   environment:
     TOKED:
       from_secret: TOKED
