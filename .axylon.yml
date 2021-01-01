@@ -3,15 +3,14 @@ name: axylon
 
 steps:
 - name: compile
-  image: fadlyas/kernel_dockerfile:latest
+  image: rzlamrr/dvst-builder:latest
   environment:
     TOKED:
       from_secret: TOKED
     CHATID:
       from_secret: CHATID
   commands:
-  - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless
-  - git clone -qq --depth=1 https://github.com/rzlamrr/kernel_msm8917 kernel
+  - git clone -qq --depth=1 https://github.com/greenforce-project/kernel_xiaomi_rova_sd425_4.9 -b android-4.9-q kernel
   - cd kernel
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/build.sh
   - chmod +x build.sh
