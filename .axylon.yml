@@ -16,4 +16,4 @@ steps:
   - cd axylon
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/rova49.sh
   - chmod +x rova49.sh
-  - bash rova49.sh ${DEFCONFIG} ${CHATID} ${CHATID} ${TOKED}
+  - bash rova49.sh
