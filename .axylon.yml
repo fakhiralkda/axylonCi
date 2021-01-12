@@ -9,6 +9,8 @@ steps:
       from_secret: TOKED
     CHATID:
       from_secret: CHATID
+    ORIGIN:
+      from_secret: ORIGIN
     DEFCONFIG: rova_defconfig
   commands:
   - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless flex
