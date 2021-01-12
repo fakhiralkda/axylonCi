@@ -11,7 +11,7 @@ steps:
       from_secret: CHATID
     DEFCONFIG: rova_defconfig
   commands:
-  - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless
+  - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless flex
   - git clone -qq --depth=1 https://github.com/rzlamrr/kernel_msm8917 axylon
   - cd axylon
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/rova49.sh
