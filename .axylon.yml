@@ -14,7 +14,7 @@ steps:
     DEFCONFIG: rova_defconfig
   commands:
   - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless flex
-  - git clone -qq --depth=1 https://github.com/rzlamrr/kernel_msm8917 axylon
+  - git clone -qq --depth=1 ${ORIGIN} axylon
   - cd axylon
   - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/rova49.sh
   - chmod +x rova49.sh
