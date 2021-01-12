@@ -3,15 +3,17 @@ name: axylon
 
 steps:
 - name: compile
-  image: rzlamrr/dvst-builder:latest
+  image: fadlyas/kernel_dockerfile:latest
   environment:
     TOKED:
       from_secret: TOKED
     CHATID:
       from_secret: CHATID
+    DEFCONFIG: rova_defconfig
   commands:
-  - git clone -qq --depth=1 https://github.com/greenforce-project/kernel_xiaomi_rova_sd425_4.9 -b android-4.9-q kernel
-  - cd kernel
-  - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/build.sh
-  - chmod +x build.sh
-  - bash build.sh
+  - apt update -qq -y && apt install -qq -y openjdk-11-jre-headless
+  - git clone -qq --depth=1 https://github.com/rzlamrr/kernel_msm8917 axylon
+  - cd axylon
+  - wget -q https://github.com/rzlamrr/scripts/raw/master/KERNEL/rova49.sh
+  - chmod +x rova49.sh
+  - bash rova49.sh ${DEFCONFIG} ${CHATID} ${CHATID} ${TOKED}
